@@ -13,7 +13,7 @@ import { writable } from 'svelte/store';
 		let enter = function (ev) {
 			let par = ev.target.parentElement.getBoundingClientRect();
 			let bb = ev.target.getBoundingClientRect();
-			let top = bb.top - par.top + bb.height + 10 ;
+			let top = bb.top - par.top + bb.height + 20 ;
 			let left = bb.left - par.left + bb.width/2 ;
 			let text = ev.target.getAttribute('tooltip');
 				store.set({
