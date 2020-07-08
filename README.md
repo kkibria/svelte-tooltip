@@ -1,8 +1,11 @@
 # svelte-tooltip
 Svelte tooltip for buttons or any other elements
 
-Install
+## Install
+```bash
 npm i https://github.com/kkibria/svelte-tooltip.git
+```
+
 How to use in svelte source,
 ```html
 <script>
@@ -30,3 +33,6 @@ How to use in svelte source,
 	{/if}
 </div>
 ```
+
+## Demo in REPL
+<https://svelte.dev/repl/81d963a15ac74f1ba4e2d20e21c60b2b?version=3.24.0>
