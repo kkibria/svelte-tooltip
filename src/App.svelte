@@ -1,0 +1,17 @@
+<script>
+	import { fade } from 'svelte/transition';
+	import { tooltip } from './tooltip.js';
+	
+	let tooltip_obj = tooltip();
+	let tooltip_store = tooltip_obj.store;
+</script>
+
+<div style="display: inline-block;" >
+	<button on:mouseover={tooltip_obj.enter} on:mouseout={tooltip_obj.leave} tooltip="Press the button to get 1s done">Button 1s</button>
+	{#if $tooltip_store.text.length}
+		<span transition:fade style="position: absolute; top: {$tooltip_store.top}px; left: {$tooltip_store.left}px;">
+			{$tooltip_store.text}
+		</span>
+	{/if}
+</div>
+
