@@ -2,14 +2,15 @@
   import { createEventDispatcher } from "svelte";
   const dispatch = createEventDispatcher();
 
-  export let tooltip = "tooltip";
+  export let tooltip = "";
   export let handler = {
     enter: () => {},
     leave: () => {},
   };
+  export let style = "";
 </script>
 
-<button
+<button {style}
   on:mouseover={handler.enter}
   on:mouseout={handler.leave}
   on:click={() => {
