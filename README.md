@@ -4,6 +4,7 @@ Svelte tooltip for buttons or any other elements
 Install
 npm i https://github.com/kkibria/svelte-tooltip.git
 How to use in svelte source,
+```html
 <script>
 	import { fade } from 'svelte/transition';
 	import { tooltip } from 'kkibria-svelte-tooltip/src/tooltip.js';
@@ -20,4 +21,4 @@ How to use in svelte source,
 		</span>
 	{/if}
 </div>
-
+```html
