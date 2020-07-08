@@ -1,8 +1,8 @@
 import { writable } from 'svelte/store';
 
-export function tooltip(timeout = 8000) {
+export function tooltip(timeout = 3000) {
 	const v = {
-		text: "placeholder",
+		text: "",
 		top: 0,
 		left: 0
 	}
