@@ -1,7 +1,10 @@
 <script>
+  // 	this was orginially developed in the REPL and then moved to and maintained in
+  // 	github ==> https://github.com/kkibria/svelte-tooltip.git
+
   import { fade } from "svelte/transition";
   import { tooltip } from "./tooltip.js";
-  import TtipBtn from "./TtipBtn.svelte";
+  import TootipButton from "./TootipButton.svelte";
 
   let tt = tooltip();
   let tt_store = tt.store;
@@ -31,14 +34,14 @@
     Button 2s
   </button>
 
-  <TtipBtn
+  <TootipButton
     handler={tt}
     tooltip="Press the TtipBtn1 button to get 1 done"
     on:click={() => {
       console.log('TtipBtn1 clicked');
     }}>
     TtipBtn1
-  </TtipBtn>
+  </TootipButton>
 
   {#if $tt_store.text.length}
     <span
