@@ -11,10 +11,11 @@ import { writable } from 'svelte/store';
 				store.set(v);
 		};
 		let enter = function (ev) {
-				let text = ev.target.getAttribute('tooltip');
-				let bb = ev.target.getBoundingClientRect();
-				let top = (bb.top + bb.bottom)/2 + 20;
-				let left = (bb.left + bb.right)/2;
+			let par = ev.target.parentElement.getBoundingClientRect();
+			let bb = ev.target.getBoundingClientRect();
+			let top = (bb.top + bb.bottom)/2 + 20 - par.top;
+			let left = (bb.left + bb.right)/2 - par.left;
+			let text = ev.target.getAttribute('tooltip');
 				store.set({
 					text: text,
 					top: top,
