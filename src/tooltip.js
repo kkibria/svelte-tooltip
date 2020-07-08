@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 	
-	export function tooltip(timeout = 3000) {
+	export function tooltip(timeout = 8000) {
 		const v = {
 			text: "",
 			top: 0,
@@ -13,8 +13,8 @@ import { writable } from 'svelte/store';
 		let enter = function (ev) {
 			let par = ev.target.parentElement.getBoundingClientRect();
 			let bb = ev.target.getBoundingClientRect();
-			let top = (bb.top + bb.bottom)/2 + 20 - par.top;
-			let left = (bb.left + bb.right)/2 - par.left;
+			let top = bb.top - par.top + bb.width/2 + 20 ;
+			let left = bb.left - par.left + bb.height/2 ;
 			let text = ev.target.getAttribute('tooltip');
 				store.set({
 					text: text,
