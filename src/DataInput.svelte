@@ -15,6 +15,7 @@
   export let placeholder = "";
   export let validate;
   export let visibility = false;
+  export let disabled = false;
   
   let valid = validate(value); 
   function check() {
@@ -24,7 +25,9 @@
   }
 
   function toggle_visibility() {
-    visibility = !visibility;
+    if (!disabled) {
+      visibility = !visibility;
+    }
   }
 </script>
 
@@ -104,6 +107,7 @@
       type="password"
       {style}
       {tooltip}
+      {disabled}
       bind:value
       on:keyup={check}
       {placeholder}
@@ -115,6 +119,7 @@
       type="text"
       {style}
       {tooltip}
+      {disabled}
       bind:value
       on:keyup={check}
       {placeholder}
@@ -128,7 +133,7 @@
       <div class="led flash" style="background-color: {LED_RED};"></div>
     {/if}
   {/if}
-  <button on:click={() => value = ''}>clear</button>
+  <button {disabled} on:click={() => value = ''}>clear</button>
   {#if password}
     <div class="eye" on:click={toggle_visibility} style="cursor: pointer;">
       <Eye state={visibility}/>  
